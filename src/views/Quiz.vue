@@ -21,7 +21,7 @@ const barProgress = computed(() => {
 });
 
 function onSelectedOption(option) {
-  if (option.isCorrect) {
+  if (option.correct) {
     numberCorrectAnswers.value++;
   }
 
@@ -42,7 +42,11 @@ function onSelectedOption(option) {
     @selectedOption="onSelectedOption"
   />
 
-  <QuizResult v-else :quizlenght="quiz.questions.length" :numberCorrectAnswers="numberCorrectAnswers" />
+  <QuizResult
+    v-else
+    :quizlenght="quiz.questions.length"
+    :numberCorrectAnswers="numberCorrectAnswers"
+  />
 </template>
 
 <style scoped></style>
